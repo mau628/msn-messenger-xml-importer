@@ -18,7 +18,12 @@ For development and
 
     npm build
 
-To build the project
+To build the project.
+
+For gh-pages publis
+For development and
+
+    npm run gh-pages
 
 ## License
 MIT &copy; [Hay Kranen](http://www.haykranen.nl)
