@@ -2,17 +2,18 @@
     <div class="drag-drop"
          v-bind:dragover="dragover">
 
-        <p class="drag-drop__help">
+        <p class="drag-drop__help"  v-if="!loading">
             <img src="../img/icon.png"
                  alt="MSN icon"
                  class="drag-drop__icon" />
             <span>Drop your MSN XML file here</span>
         </p>
-
-        <p class="drag-drop__help"
-           v-show="loading">
-            <span>Parsing XML file...</span>
-        </p>
+        <div v-else>
+            <p class="drag-drop__help">
+                <span>Parsing XML file...</span>
+            </p>
+            <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+        </div>
 
         <p v-show="error"
            class="drag-drop__error">{{error}}</p>

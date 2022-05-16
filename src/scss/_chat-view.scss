@@ -28,9 +28,10 @@
         padding: 1rem;
         border-radius: 1rem;
         font-size: 16px;
+        overflow-wrap: break-word;
     }
 
-    &__item:nth-child(even) {
+    &__right {
         margin-left: auto;
     }
 
@@ -47,4 +48,8 @@
     &__text {
         font-size: 18px;
     }
+}
+hr{
+    margin-top: 1rem;
+    margin-bottom: 3rem;
 }

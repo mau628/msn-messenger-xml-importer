@@ -60,6 +60,7 @@ export class MsnXml {
         return {
             date : message._attributes.Date,
             datetime : message._attributes.DateTime,
+            sessionid: parseInt(message._attributes.SessionID),
             from : this.parseFriendlyName(message.From.User),
             text : message.Text._text,
             text_style : message.Text._attributes?.Style,
