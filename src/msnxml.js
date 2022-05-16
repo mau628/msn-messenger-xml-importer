@@ -6,7 +6,12 @@ export class MsnXml {
         this.rawXml = rawXml;
         this.data = null;
         this.parse();
-        this.messages = this.data.Log.Message.map(m => this.parseMessage(m));
+        if(Array.isArray(this.data.Log.Message))
+            this.messages = this.data.Log.Message.map(m => this.parseMessage(m));
+        else {
+            this.messages = [];
+            this.messages.push(this.parseMessage(this.data.Log.Message));
+        }
         this.messagesFlat = this.messages.map(m => this.flattenMessage(m));
     }
 
